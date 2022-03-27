@@ -4,7 +4,7 @@ class Scene
 {
     constructor()
     {
-        let particle1 = new Particle([100,100])
+        let particle1 = new Particle([500,500], [0, -98], [0, 98])
 
         this.objects = {"particles": [particle1]}
     }

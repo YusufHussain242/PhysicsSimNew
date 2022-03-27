@@ -1,15 +1,23 @@
-class Particle
+let SceneObj = require("./SceneObj.js") 
+let mathjs = require("mathjs")
+
+class Particle extends SceneObj
 {
-    constructor(position)
+    constructor(position, velocity, accel)
     {
+        super("particle", 0) //Temporary values
         this.position = position
+        this.velocity = velocity
+        this.accel = accel
         this.width = 10
         this.height = 10
     }
 
     update(deltaTime)
     {
-        this.position[0] += 10*deltaTime
+        //Updates position and velocity of particle each frame
+        this.position = mathjs.add(this.position, mathjs.multiply(deltaTime, this.velocity), mathjs.multiply(0.5*deltaTime**2, this.accel))
+        this.velocity = mathjs.add(this.velocity, mathjs.multiply(deltaTime, this.accel))
     }
 
     draw(ctx)
