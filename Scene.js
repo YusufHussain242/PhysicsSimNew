@@ -4,7 +4,10 @@ class Scene
 {
     constructor()
     {
-        let particle1 = new Particle([500,500], [0, -98], [0, 98])
+        let particle1 = new Particle([500,500], [0, 0], 1)
+        let index = particle1.addForce([5,5])
+        particle1.addForce([0,98])
+        particle1.removeForce(index)
 
         this.objects = {"particles": [particle1]}
     }
