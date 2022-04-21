@@ -13,7 +13,24 @@
     </style>
 </head>
 <body>
+    <p>
+        Instructions:
+        <br>
+        Click the add particle button to add a particle to the simulation. The particle will be added in the top left of the screen.
+        <br>
+        Use mouse click to select your desired object. The object closest to your mouse will be the one selected.
+        <br>
+        When an object is selected, you change and view it properties through the properties menu that appears below.
+    </p>
+    <br>
+    <br>
+    <input type="button" id="togglePause" value="Pause"></input>
+    <br>
+    <button type="button" id="addParticleButton">Add Particle</button>
+    <br>
     <canvas id="canvas"></canvas>
+    <div id="propertiesMenu">
+    </div>
     <script type="module" src="bundle.js"></script>
 </body>
 </html>

@@ -7,16 +7,18 @@ let ctx = canvas.getContext("2d");
 //Rendering context is used to render all objects to the screen
 
 //Set the width and height of the canvas to be the size of the window
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+canvas.width = 1000;
+canvas.height = 500;
 
 //Canvas automatically resizes to be the size of the canvas
+/*
 window.addEventListener("resize", () => {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
 });
+*/
 
-let scene = new Scene(canvas.width, canvas.height, ctx);
+let scene = new Scene(canvas);
 
 //Used in calculating deltaTime (Time between frames)
 let lastTime = 0;
@@ -36,7 +38,7 @@ function sceneLoop(timeStamp)
     if (deltaTime != 0)
     {
         //update method needs deltaTime for normalising simulation speed
-        scene.update(deltaTime);
+        scene.update(deltaTime, timeStamp/1000);
         //Draw method needs rendering context to render objects to canvas
         scene.draw(ctx);
     }

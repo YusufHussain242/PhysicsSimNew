@@ -1,0 +1,33 @@
+/*
+        <br>
+        <br>
+        <label id=rForceLable>ResultantForce: </label>
+        <input type="text" id=rForceX>
+        <input type="text" id=rForceY>
+        <br>
+        <br>
+        <label id=accelLable>ResultantAccel: </label>
+        <input type="text" id=accelyX>
+        <input type="text" id=accelY>
+        <br>
+        <br>
+        <label id=forcesLabel>Forces: </label>
+        <br>
+        <div id=forces></div>
+        <button type="button" id="forceButton">Add Force</button>
+        `
+
+        document.getElementById("forceButton").onclick = () => {
+            document.getElementById("forces").innerHTML += `
+            <label class=forceLable>Force: </label>
+            <input type="text" class=forceX>
+            <input type="text" class=forceY>
+            <br>
+            <label class=accelLable>Acceleration: </label>
+            <input type="text" class=accelX>
+            <input type="text" class=accelY>
+            <br>
+            <br>
+            `
+        }
+        */
